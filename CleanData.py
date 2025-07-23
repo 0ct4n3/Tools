@@ -72,6 +72,6 @@ tk.Label(ventana, text="Guardar imagen limpia como:").pack(pady=5)
 tk.Entry(ventana, textvariable=salida_var, width=60).pack()
 tk.Button(ventana, text="Seleccionar destino", command=guardar_imagen).pack(pady=5)
 
-tk.Button(ventana, text="🧹 Limpiar Metadatos", command=procesar, bg="#EC008C", fg="white").pack(pady=10)
+tk.Button(ventana, text=" Limpiar Metadatos", command=procesar, bg="#EC008C", fg="white").pack(pady=10)
 
 ventana.mainloop()
