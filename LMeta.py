@@ -21,18 +21,18 @@ def seleccionar_imagen():
         exif_data = imagen._getexif()
 
         resultado.delete("1.0", tk.END)
-        resultado.insert(tk.END, f"🖼️ Imagen: {os.path.basename(ruta)}\n\n")
+        resultado.insert(tk.END, f" Imagen: {os.path.basename(ruta)}\n\n")
 
         if exif_data:
-            resultado.insert(tk.END, "📂 Metadatos encontrados:\n\n")
+            resultado.insert(tk.END, " Metadatos encontrados:\n\n")
             for tag_id, valor in exif_data.items():
                 etiqueta = ExifTags.TAGS.get(tag_id, tag_id)
                 resultado.insert(tk.END, f"{etiqueta:25}: {valor}\n")
         else:
             if extension in formatos_conocidos:
-                resultado.insert(tk.END, "❌ No se encontraron metadatos EXIF.\n")
+                resultado.insert(tk.END, " No se encontraron metadatos EXIF.\n")
             else:
-                resultado.insert(tk.END, "⚠️ Este tipo de imagen normalmente no contiene metadatos EXIF.\n")
+                resultado.insert(tk.END, " Este tipo de imagen normalmente no contiene metadatos EXIF.\n")
 
     except Exception as e:
         messagebox.showerror("Error", f"No se pudo analizar la imagen: {e}")
@@ -44,7 +44,7 @@ ventana.configure(bg="#121212")
 ventana.geometry("700x500")
 
 # Botón para seleccionar imagen
-boton = tk.Button(ventana, text="📁 Seleccionar Imagen", command=seleccionar_imagen, 
+boton = tk.Button(ventana, text=" Seleccionar Imagen", command=seleccionar_imagen, 
                   bg="#EC008C", fg="white", font=("Consolas", 12, "bold"))
 boton.pack(pady=10)
 
